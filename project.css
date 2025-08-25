@@ -8,19 +8,14 @@
 body {
     height: 100vh;
 background: 
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),
-    url("img/background.apresentation.jpg") no-repeat center / cover;
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("img/background.apresentation.jpg");
+    height: 100vh;
+    background-attachment: fixed; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     padding: 50px 5%;
-}
-
-.container{
-    position: relative;
-    height: 100%;
-    background: rgb(255, 255, 255, .1);
-    border-radius: 10px;
-    backdrop-filter: blur(4px);
-    transform: scale(0);
-    animation: zoom-in 1s ease forwards;
 }
 
 @keyframes zoom-in {
@@ -75,3 +70,76 @@ header{
 .navbar a:hover, .navbar a.active{
     border-color: #fff;
 }
+
+.project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px 9%;
+    color: #fff ;
+    text-align: center;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.wrapper .box {
+    padding: 30px 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    transition: 0.5s;
+}
+
+.wrapper .box:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.box i{
+    font-size: 60px;
+    text-shadow: #fff;
+}
+
+.box h2{
+    font-size: 25px;
+}
+
+.box p {
+    margin: 10px 0 18px;
+    text-align: justify;
+}
+
+.box a {
+    display: inline-block;
+    padding: 8px 20px;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.box a:hover{
+    color:  rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+    border: 2px solid  rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 992px){
+    .container{
+        padding: 20px 5%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .container .wrapper {
+        grid-template-columns: auto-fit, minmax();
+    }
+}
+
